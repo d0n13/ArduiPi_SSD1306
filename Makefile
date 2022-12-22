@@ -21,7 +21,8 @@ LIB=libssd1306
 LIBNAME=$(LIB).so.1.0
 
 # The recommended compiler flags for the Raspberry Pi
-CCFLAGS=-Ofast -mfpu=vfp -mfloat-abi=hard -march=armv6zk -mtune=arm1176jzf-s
+CCFLAGS=-Ofast -DBCM2835_HAVE_LIBCAP -L/usr/lib/aarch64-linux-gnu -L/usr/local/lib -I/usr/local/include -lssd1306 -li2c
+#-mfpu=vfp -mfloat-abi=hard -march=armv6zk -mtune=arm1176jzf-s
 
 # make all
 # reinstall the library after each recompilation
